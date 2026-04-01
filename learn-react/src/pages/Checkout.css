@@ -1,0 +1,280 @@
+/* ===================================== */
+/* GLOBAL THEME (SAMA DENGAN WELCOME)    */
+/* ===================================== */
+:root {
+  --primary: #6366f1;
+  --secondary: #9333ea;
+
+  --bg-light: #eef2ff;
+  --card: #ffffff;
+
+  --text: #374151;
+  --muted: #8b8b8b;
+
+  --danger: #ef4444;
+  --radius: 18px;
+}
+
+
+/* ===================================== */
+/* RESET + FONT SYSTEM                   */
+/* ===================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  background: linear-gradient(135deg, var(--bg-light), #ffffff);
+}
+
+
+/* ===================================== */
+/* PAGE LAYOUT                           */
+/* ===================================== */
+.checkout-page {
+  min-height: 100vh;
+  padding: 50px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* ===================================== */
+/* HEADER (WELCOME STYLE)                */
+/* ===================================== */
+.checkout-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* gradient text TANPA warning */
+.checkout-header h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+
+  font-family: "Georgia", "Times New Roman", serif;
+
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  margin: 0;
+}
+
+
+/* ===================================== */
+/* LIST PRODUK                           */
+/* ===================================== */
+.checkout-list {
+  width: 100%;
+  max-width: 650px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.checkout-item {
+  display: flex;
+  gap: 14px;
+
+  background: var(--card);
+  padding: 14px;
+
+  border-radius: var(--radius);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+
+  transition: 0.25s;
+}
+
+.checkout-item:hover {
+  transform: translateY(-3px);
+}
+
+.checkout-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+
+  border-radius: 12px;
+  background: #f7f7ff;
+}
+
+.item-info h4 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.item-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: var(--secondary);
+}
+
+
+/* ===================================== */
+/* CARD (FORM + OPTIONS + SUMMARY)       */
+/* ===================================== */
+.checkout-form,
+.checkout-options,
+.checkout-summary {
+  width: 100%;
+  max-width: 650px;
+
+  background: white;
+  padding: 22px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+
+/* ===================================== */
+/* LABEL + INPUT                         */
+/* ===================================== */
+label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+}
+
+input,
+textarea,
+select {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.estimasi,
+.ongkir {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* ===================================== */
+/* SUMMARY                               */
+/* ===================================== */
+.checkout-summary {
+  text-align: right;
+}
+
+.total {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.total span {
+  font-size: 20px;
+  color: var(--secondary);
+}
+
+
+/* ===================================== */
+/* BUTTON                                */
+/* ===================================== */
+.btn-place-order {
+  margin-top: 12px;
+
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+
+  border: none;
+  padding: 14px;
+
+  border-radius: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-place-order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+/* cancel lebih kelihatan */
+.btn-cancel-order {
+  margin-top: 8px;
+
+  background: white;
+  color: var(--danger);
+
+  border: 2px solid var(--danger);
+
+  padding: 12px;
+  border-radius: 14px;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.btn-cancel-order:hover {
+  background: var(--danger);
+  color: white;
+}
+
+
+/* ===================================== */
+/* RESPONSIVE                            */
+/* ===================================== */
+@media (max-width: 600px) {
+  .checkout-header h2 {
+    font-size: 2rem;
+  }
+
+  .checkout-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .checkout-summary {
+    text-align: center;
+  }
+}
